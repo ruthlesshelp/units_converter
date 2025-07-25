@@ -61,3 +61,16 @@ def test_convert_with_98_6f_expect_37c():
 
     # Assert
     assert result == 37, "Expected 98.6°F to convert to 37°C"
+
+def test_convert_with_minus_40f_expect_minus_40c():
+    """
+    special case where Fahrenheit and Celsius scales intersect
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    result = class_under_test.convert_to_celsius(-40)
+
+    # Assert
+    assert result == -40, "Expected -40°F to convert to -40°C"
