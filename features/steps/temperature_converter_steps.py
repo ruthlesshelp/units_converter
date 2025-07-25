@@ -7,15 +7,17 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', 'src'))
 
 from conversion.temperature_converter import TemperatureConverter
 
-@given('I have a temperature of {fahrenheit:d} Fahrenheit')
-def step_given_temperature(context, fahrenheit):
+@given('I have a temperature converter')
+def step_given_temperature_converter(context):
+    """Initialize the temperature converter."""
+    context.converter = TemperatureConverter()
+
+@when('I convert {fahrenheit:d} degrees Fahrenheit to Celsius')
+def step_when_convert_fahrenheit_to_celsius(context, fahrenheit):
+    """Convert the given Fahrenheit temperature to Celsius."""
     context.fahrenheit = fahrenheit
+    context.celsius = context.converter.convert_to_celsius(fahrenheit)
 
-@when('I convert it to Celsius')
-def step_when_convert(context):
-    converter = TemperatureConverter()
-    context.celsius = converter.convert_to_celsius(context.fahrenheit)
-
-@then('the result should be {expected:d} Celsius')
-def step_then_result(context, expected):
-    assert context.celsius == expected, f"Expected {expected}, got {context.celsius}"
+@then('the result should be {celsius:d} degrees Celsius')
+def step_then_result(context, celsius):
+    assert context.celsius == celsius, f"Expected {celsius}, got {context.celsius}"
