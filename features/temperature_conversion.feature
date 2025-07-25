@@ -11,3 +11,4 @@ Feature: Fahrenheit to Celsius Conversion
     Examples:
       | fahrenheit | celsius | reason                  |
       | 32         | 0       | freezing point of water |
+      | 212        | 100     | boiling point of water  |
