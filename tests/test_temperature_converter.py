@@ -47,3 +47,17 @@ def test_convert_with_212f_expect_100c():
 
     # Assert
     assert result == 100, "Expected 212°F to convert to 100°C"
+
+def test_convert_with_98_6f_expect_37c():
+    """
+    normal human body temperature
+    convert 98.6F to 37C
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    result = class_under_test.convert_to_celsius(98.6)
+
+    # Assert
+    assert result == 37, "Expected 98.6°F to convert to 37°C"

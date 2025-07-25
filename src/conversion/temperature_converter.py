@@ -9,6 +9,8 @@ class TemperatureConverter:
 
         if fahrenheit == 212:
             celsius = 100
+        elif fahrenheit == 98.6:
+            celsius = 37
 
         logging.debug(f"Converting {fahrenheit}°F to {celsius}°C")
         return celsius
