@@ -5,14 +5,7 @@ class TemperatureConverter:
         pass
 
     def convert_to_celsius(self, fahrenheit: int) -> int:
-        celsius = 0
-
-        if fahrenheit == 212:
-            celsius = 100
-        elif fahrenheit == 98.6:
-            celsius = 37
-        elif fahrenheit == -40:
-            celsius = -40
+        celsius = (fahrenheit - 32) * 5 / 9
 
         logging.debug(f"Converting {fahrenheit}°F to {celsius}°C")
         return celsius
