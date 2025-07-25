@@ -133,3 +133,70 @@ FAILED tests/test_temperature_converter.py::test_convert_with_32f_expect_0c - No
 ### Congratulations!
 
 Congrats, now that you have failing tests, you're ready to started.
+
+## Behavior-Driven Development (BDD) with Behave
+
+This project includes BDD tests using the `behave` framework. BDD tests are written in natural language using the Gherkin syntax.
+
+Install `behave` by running:
+```bash
+$ pip install behave
+```
+
+Confirm the `behave` version by running:
+```bash
+$ behave --version
+```
+
+You should see:
+```bash
+behave 1.2.6
+```
+
+### Running BDD Tests
+
+Run all BDD tests:
+```bash
+$ behave
+```
+
+Run BDD tests with verbose output:
+```bash
+$ behave -v
+```
+
+Run BDD tests with specific tags:
+```bash
+$ behave --tags=@smoke
+```
+
+Using the Makefile:
+```bash
+$ make bdd           # Run all BDD tests
+```
+
+### BDD Test Structure
+
+- **Features**: Located in `features/` directory
+  - `temperature_conversion.feature` - Contains scenarios for temperature conversion
+- **Step Definitions**: Located in `features/steps/`
+  - `temperature_steps.py` - Python code that implements the Gherkin steps
+- **Environment**: `features/environment.py` - Setup and teardown hooks
+- **Configuration**: `behave.ini` - Behave configuration settings
+
+### Writing New BDD Tests
+
+1. Add scenarios to feature files using Gherkin syntax:
+   ```gherkin
+   Scenario: Convert room temperature
+     Given I have a temperature converter
+     When I convert 72 degrees Fahrenheit to Celsius
+     Then the result should be 22.22 degrees Celsius
+   ```
+
+2. Implement step definitions in Python:
+   ```python
+   @when('I convert {fahrenheit:f} degrees Fahrenheit to Celsius')
+   def step_convert_temperature(context, fahrenheit):
+       context.result = context.converter.convert_to_celsius(fahrenheit)
+   ```
