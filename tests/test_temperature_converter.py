@@ -33,3 +33,17 @@ def test_convert_with_32f_expect_0c():
 
     # Assert
     assert result == 0, "Expected 32°F to convert to 0°C"
+
+def test_convert_with_212f_expect_100c():
+    """
+    boiling point of water
+    convert 212F to 100C
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    result = class_under_test.convert_to_celsius(212)
+
+    # Assert
+    assert result == 100, "Expected 212°F to convert to 100°C"

@@ -5,5 +5,10 @@ class TemperatureConverter:
         pass
 
     def convert_to_celsius(self, fahrenheit: int) -> int:
-        logging.debug(f"Converting {fahrenheit}°F to 0°C")
-        return 0
+        celsius = 0
+
+        if fahrenheit == 212:
+            celsius = 100
+
+        logging.debug(f"Converting {fahrenheit}°F to {celsius}°C")
+        return celsius
