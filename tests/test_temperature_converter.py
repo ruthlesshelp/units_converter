@@ -21,7 +21,10 @@ from conversion.temperature_converter import TemperatureConverter
 
 # --------------------------------------------------
 def test_convert_with_32f_expect_0c():
-    """convert 32F to 0C"""
+    """
+    freezing point of water
+    convert 32F to 0C
+    """
     # Arrange
     class_under_test = TemperatureConverter()
 
