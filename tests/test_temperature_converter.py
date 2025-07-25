@@ -3,6 +3,7 @@
 
 import os
 import sys
+import pytest
 
 file_under_test = os.path.join(os.path.dirname(__file__), '..', 'src', 'conversion', 'temperature_converter.py')
 
@@ -87,3 +88,18 @@ def test_convert_with_0f_expect_minus_17_78c():
 
     # Assert
     assert result == -17.78, "Expected 0°F to convert to approximately -17.78°C"
+
+def test_convert_with_minus_500f_expect_value_error():
+    """
+    test for invalid input
+    convert -500F should raise ValueError
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    with pytest.raises(ValueError) as exc_info:
+        class_under_test.convert_to_celsius(-500)
+
+    # Assert
+    assert str(exc_info.value) == "Temperature below absolute zero is not valid", "Expected ValueError for temperatures below absolute zero"
