@@ -37,10 +37,15 @@ def main():
 
     # Create an instance of TemperatureConverter and perform the conversion
     converter = TemperatureConverter()
-    # Convert the Fahrenheit value to Celsius
-    celsius = converter.convert_to_celsius(fahrenheit)
 
-    print(f'Converted {fahrenheit}°F to {celsius}°C')
+    # Add error handling for invalid temperatures
+    try:
+        # Convert the Fahrenheit value to Celsius
+        celsius = converter.convert_to_celsius(fahrenheit)
+
+        print(f'Converted {fahrenheit}°F to {celsius}°C')
+    except ValueError as e:
+        print(f'Error: {e}')
 
 
 # Ensure the script can be run directly
