@@ -6,6 +6,7 @@ class TemperatureConverter:
 
     def convert_to_celsius(self, fahrenheit: int) -> int:
         celsius = (fahrenheit - 32) * 5 / 9
+        celsius = round(celsius, 2)
 
         logging.debug(f"Converting {fahrenheit}°F to {celsius}°C")
         return celsius

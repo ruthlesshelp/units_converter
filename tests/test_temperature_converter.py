@@ -74,3 +74,16 @@ def test_convert_with_minus_40f_expect_minus_40c():
 
     # Assert
     assert result == -40, "Expected -40°F to convert to -40°C"
+
+def test_convert_with_0f_expect_minus_17_78c():
+    """
+    convert 0F to approximately -17.78C
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    result = class_under_test.convert_to_celsius(0)
+
+    # Assert
+    assert result == -17.78, "Expected 0°F to convert to approximately -17.78°C"
