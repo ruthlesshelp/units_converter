@@ -103,3 +103,17 @@ def test_convert_with_minus_500f_expect_value_error():
 
     # Assert
     assert str(exc_info.value) == "Temperature below absolute zero is not valid", "Expected ValueError for temperatures below absolute zero"
+
+def test_convert_with_minus_459_67f_expect_minus_273_15c():
+    """
+    test for absolute zero
+    convert -459.67F should raise ValueError
+    """
+    # Arrange
+    class_under_test = TemperatureConverter()
+
+    # Act
+    result = class_under_test.convert_to_celsius(-459.67)
+
+    # Assert
+    assert result == -273.15, "Expected -459.67°F to convert to -273.15°C"
