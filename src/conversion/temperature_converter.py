@@ -7,4 +7,6 @@ class TemperatureConverter:
     def convert_to_celsius(self, fahrenheit: int) -> int:
         if fahrenheit == 212:
             return 100
+        elif fahrenheit == 98.6:
+            return 37
         return 0

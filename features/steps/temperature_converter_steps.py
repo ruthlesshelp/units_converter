@@ -13,6 +13,7 @@ def step_given_temperature_converter(context):
     context.converter = TemperatureConverter()
 
 @when('I convert {fahrenheit:d} degrees Fahrenheit to Celsius')
+@when('I convert {fahrenheit:f} degrees Fahrenheit to Celsius')
 def step_when_convert_fahrenheit_to_celsius(context, fahrenheit):
     """Convert the given Fahrenheit temperature to Celsius."""
     context.fahrenheit = fahrenheit

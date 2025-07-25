@@ -12,3 +12,4 @@ Feature: Fahrenheit to Celsius Conversion
       | fahrenheit | celsius | reason                  |
       | 32         | 0       | freezing point of water |
       | 212        | 100     | boiling point of water  |
+      | 98.6       | 37      | human body temperature  |
