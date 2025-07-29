@@ -4,17 +4,12 @@ class TemperatureConverter:
     def __init__(self):
         pass
 
-    def convert_to_celsius(self, fahrenheit: int) -> int:
+    def convert_to_celsius(self, fahrenheit: float) -> float:
         if fahrenheit < -459.67:
             raise ValueError("Temperature below absolute zero is not allowed.")
 
-        if fahrenheit == 212:
-            return 100
-        elif fahrenheit == 98.6:
-            return 37
-        elif fahrenheit == -40:
-            return -40
-        elif fahrenheit == 0:
-            return -17.78
+        # Convert Fahrenheit to Celsius using the formula
+        celsius: float = (fahrenheit - 32) * 5.0 / 9.0
 
-        return 0
+        # Round to two decimal places for consistency
+        return round(celsius, 2)

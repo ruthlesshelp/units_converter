@@ -4,4 +4,4 @@ test:
 	pytest -xv tests
 
 bdd:
-	behave
+	behave --stop
