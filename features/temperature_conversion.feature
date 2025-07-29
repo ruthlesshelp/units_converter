@@ -15,6 +15,7 @@ Feature: Fahrenheit to Celsius Conversion
       | 98.6       | 37      | human body temperature  |
       | -40        | -40     | linear scales intersect |
       | 0          | -17.78  | potential divide by zero |
+      | -459.67    | -273.15 | absolute zero in Celsius |
 
   Scenario: Convert temperature below absolute zero
     Given I have a temperature converter
