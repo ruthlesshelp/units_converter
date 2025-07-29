@@ -15,3 +15,8 @@ Feature: Fahrenheit to Celsius Conversion
       | 98.6       | 37      | human body temperature  |
       | -40        | -40     | linear scales intersect |
       | 0          | -17.78  | potential divide by zero |
+
+  Scenario: Convert temperature below absolute zero
+    Given I have a temperature converter
+    When I convert -500 degrees Fahrenheit to Celsius
+    Then the ValueError should be raised
