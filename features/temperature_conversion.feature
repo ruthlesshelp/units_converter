@@ -14,3 +14,4 @@ Feature: Fahrenheit to Celsius Conversion
       | 212        | 100     | boiling point of water  |
       | 98.6       | 37      | human body temperature  |
       | -40        | -40     | linear scales intersect |
+      | 0          | -17.78  | potential divide by zero |

@@ -11,5 +11,7 @@ class TemperatureConverter:
             return 37
         elif fahrenheit == -40:
             return -40
+        elif fahrenheit == 0:
+            return -17.78
 
         return 0

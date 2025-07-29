@@ -20,5 +20,6 @@ def step_when_convert_fahrenheit_to_celsius(context, fahrenheit):
     context.celsius = context.converter.convert_to_celsius(fahrenheit)
 
 @then('the result should be {celsius:d} degrees Celsius')
+@then('the result should be {celsius:f} degrees Celsius') # Allow float values
 def step_then_result(context, celsius):
     assert context.celsius == celsius, f"Expected {celsius}, got {context.celsius}"
